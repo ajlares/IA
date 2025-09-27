@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Exam1_bob : MonoBehaviour
 {
@@ -8,4 +9,10 @@ public class Exam1_bob : MonoBehaviour
     private doorButton doorButton;
     public GameObject finishGameObject;
     
+    [Header("movement")]
+    private NavMeshAgent agent;
+    private Vector3 movePosition;
+    private CharacterController CC;
+    
+
 }
