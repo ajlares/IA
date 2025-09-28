@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,7 +14,8 @@ public class Exam1_bob : MonoBehaviour
     [Header("movement")]
     private NavMeshAgent agent;
     private Vector3 movePosition;
-    private CharacterController CC;
+    public  Vector3 randomDestination = Vector3.zero;
+    private bool isInLocation;
 
     [Header("actions")]
     public bool isActing;
@@ -26,26 +28,27 @@ public class Exam1_bob : MonoBehaviour
     public LayerMask obstaclesMask;
     
     [Header("dictionary")]
-    private Dictionary<string, float> acctionScores;
+    private Dictionary<string, float> examEscores;
     
 
     private void Start()
     {
         // pickup nav mesh and character component
         gameObject.TryGetComponent(out agent);
-        gameObject.TryGetComponent(out CC);
         // settup dictionary
-        acctionScores = new Dictionary<string, float>()
+        examEscores = new Dictionary<string, float>()
         {
             {"finish",0f},
             {"button",0f},
             {"randomPoint",0f}
         } ;
     }
-
+    
     private void Update()
     {
+        
         //sens
+        
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetsMask);
 
         foreach (Collider target in targetsInViewRadius)
@@ -72,25 +75,79 @@ public class Exam1_bob : MonoBehaviour
                 }
             }
         }
-        //act
         
         //plan
+
+        if (door != null)
+        {
+            if (door.GetComponent<door>().open)
+            {
+                examEscores["finish"] = 100;
+            }
+        }
+
+        if (doorButton != null)
+        {
+            examEscores["button"] = 50;
+            if (doorButton.GetComponent<doorButton>().waPresssed)
+            {
+                examEscores["button"] = 0;
+            }
+        }
+        
+        examEscores["randomPoint"] = 10;
+        
+        //act
+        
+        string chosengScore = examEscores.Aggregate((l,r) => l.Value > r.Value ? l : r).Key;
+        Debug.Log(chosengScore);
+        switch (chosengScore)
+        {
+            case "finish":
+                Finish();
+                break;
+            
+            case "button":
+                PressButton();
+                break;
+            
+            case "randomPoint":
+                RandomPosition(50f);
+                break;
+            default:
+                break;
+        }
+        
         
     }
 
-    private void move(Vector3 movepos)
+     public void RandomPosition(float radius)
     {
-        
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, NavMesh.AllAreas))
+        {
+            if (randomDestination.magnitude == 0)
+            {
+                randomDestination = hit.position;
+            }
+            if (Vector3.Distance(transform.position, randomDestination) < 2)
+            {
+                randomDestination = hit.position;
+            }
+            agent.SetDestination(randomDestination);
+        }
     }
-
+    
     private void PressButton()
     {
-        
+        agent.SetDestination(doorButton.transform.position);
     }
 
     private void Finish()
     {
-        CC.Move(finishGameObject.transform.position);
+       agent.SetDestination(finishGameObject.transform.position);
     }
     void OnDrawGizmosSelected()
     {
