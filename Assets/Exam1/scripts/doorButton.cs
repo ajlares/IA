@@ -11,7 +11,7 @@ public class doorButton : MonoBehaviour
         if (other.CompareTag("bob"))
         {
             waPresssed = true;
-            door.GetComponent<door>().open = true;
+            door.GetComponent<door>().openDoor();
         }
     }
 }
