@@ -4,7 +4,10 @@ public class FinishState : State
 {
     public override void Update(StateMachine stateMachine)
     {
-        stateMachine.gameObject.transform.Rotate(new Vector3(0,1,0));
+        if (stateMachine != null)
+        {
+            stateMachine.gameObject.transform.Rotate(new Vector3(0,1,0));
+        }
     }
 
     public override void EnterState(StateMachine stateMachine)
