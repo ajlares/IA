@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bda39e6c0580c44e9a2f75a95b80efe, type: 3}
+  m_Name: NeedCOffe
+  m_EditorClassIdentifier: Assembly-CSharp::NeedCOffe
+  transitions:
+  - Condicion: {fileID: 11400000, guid: 335be913d9643b140abf575ed3442696, type: 2}
+    State: {fileID: 11400000, guid: 15bac348246dfbd4eb7ea3758511788e, type: 2}
+  - Condicion: {fileID: 11400000, guid: 05f7d1512626ed64bb8b5782b2709a0c, type: 2}
+    State: {fileID: 11400000, guid: 0327eaf22eb7d054d848fd8cfcbdcb37, type: 2}
+  coffeAmount: 10
+  coffeTimeDelay: 1
+  indexTime: 0

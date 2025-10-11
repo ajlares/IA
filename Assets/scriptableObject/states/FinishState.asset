@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2f3f0b7cc987246911273a3b01a86b, type: 3}
+  m_Name: FinishState
+  m_EditorClassIdentifier: Assembly-CSharp::FinishState
+  transitions:
+  - Condicion: {fileID: 11400000, guid: 05f7d1512626ed64bb8b5782b2709a0c, type: 2}
+    State: {fileID: 11400000, guid: 0327eaf22eb7d054d848fd8cfcbdcb37, type: 2}
+  - Condicion: {fileID: 11400000, guid: 909c1d5d7be44374e98242625f45a9ab, type: 2}
+    State: {fileID: 11400000, guid: 8417ce313834107469b01f2a3413e04c, type: 2}

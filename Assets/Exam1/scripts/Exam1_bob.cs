@@ -117,10 +117,7 @@ public class Exam1_bob : MonoBehaviour
             default:
                 break;
         }
-        
-        
     }
-
      public void RandomPosition(float radius)
     {
         Vector3 randomDirection = Random.insideUnitSphere * radius;
@@ -161,11 +158,9 @@ public class Exam1_bob : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + leftBoundary * viewRadius);
         Gizmos.DrawLine(transform.position, transform.position + rightBoundary * viewRadius);
     }
-
     Vector3 DirFromAngle(float angleInDegrees)
     {
         angleInDegrees += transform.eulerAngles.y;
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
-
 }
