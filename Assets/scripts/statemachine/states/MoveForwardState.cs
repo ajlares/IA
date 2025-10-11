@@ -18,5 +18,4 @@ public class MoveForwardState : State
     {
         stateMachine.gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
     }
-    
 }
