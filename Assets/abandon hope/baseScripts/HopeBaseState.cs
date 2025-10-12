@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class HopeBaseState : ScriptableObject
 {
-    public Transition[] transitions;
+    public HopeCondition.HopeTransition[] transitions;
     public virtual void EnterState(HopeStateMachine stateMachine)
     {
         
     }
-    public virtual void Update(HopeStateMachine stateMachine)
+    public virtual void UpdateState(HopeStateMachine stateMachine)
     {
         
     }
@@ -20,13 +20,13 @@ public class HopeBaseState : ScriptableObject
     {
         if (transitions.Length > 0)
         {
-            foreach (Transition t in transitions)
+            foreach (HopeCondition.HopeTransition hp in transitions)
             {
-                //if (t.Condicion != null && t.Condicion.Check(stateMachine))
-                //{
-                //    stateMachine.ChangeState(t.State);
-                //    break;
-                //}
+                if (hp.condition != null && hp.condition.CheckCondition(stateMachine))
+                {
+                    stateMachine.ChangeState(hp.state);
+                    break;
+                }
             }
         }
     }

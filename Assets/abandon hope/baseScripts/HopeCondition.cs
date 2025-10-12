@@ -7,7 +7,7 @@ public class HopeCondition : ScriptableObject
         return false;
     }
     [System.Serializable]
-    public class Transition
+    public class HopeTransition
     {
         public HopeCondition condition;
         public HopeBaseState state;

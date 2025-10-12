@@ -19,7 +19,7 @@ public class HopeStateMachine : MonoBehaviour
     {
         if (currentState != null)
         {
-            currentState.Update(this);
+            currentState.UpdateState(this);
             currentState.CheckTransitions(this);
         }
     }
