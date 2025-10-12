@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class closeShoop : HopeBaseState
+[CreateAssetMenu(fileName = "working", menuName = "hope/Routine/states/working")]
+public class working : HopeBaseState
 {
     public override void EnterState(HopeStateMachine stateMachine)
     {

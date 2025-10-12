@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 public class HopeManagers : MonoBehaviour
 {
-    public float currentTIme = 0;
+    public float currentTime = 0;
     private float dayTime = 24;
 
     public static HopeManagers Instance;
@@ -21,10 +20,10 @@ public class HopeManagers : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentTIme += Time.fixedDeltaTime;
-        if (currentTIme > dayTime)
+        currentTime += Time.fixedDeltaTime;
+        if (currentTime > dayTime)
         {
-            currentTIme = 0;
+            currentTime = 0;
         }
     }
 }

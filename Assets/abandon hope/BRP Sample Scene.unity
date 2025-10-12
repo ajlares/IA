@@ -6073,6 +6073,37 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &777844160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 777844161}
+  m_Layer: 0
+  m_Name: house1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &777844161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777844160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 78, y: 2.59918, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &796693231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7299,6 +7330,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4462822112021482453, guid: 83a216cfca0dba34a985eb00334174bc, type: 3}
   m_PrefabInstance: {fileID: 924053599}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &947647998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947648000}
+  - component: {fileID: 947647999}
+  m_Layer: 0
+  m_Name: managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &947647999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947647998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66c54ac01709e754487ecc1b27d1b454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HopeManagers
+  currentTime: 0
+--- !u!4 &947648000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947647998}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.46345, y: 3.39601, z: 50.3678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &963656203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9051,6 +9127,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 313862337151720703, guid: 4f98046bf5f8cc5489858d3c58f80972, type: 3}
   m_PrefabInstance: {fileID: 1176422017}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1195409099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195409100}
+  m_Layer: 0
+  m_Name: work1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1195409100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195409099}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 62.75079, y: 2.59918, z: 23}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1207955130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16745,6 +16852,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HopeStats
   speed: 10
   agent: {fileID: 2130617296}
+  ShopGameObject: {fileID: 1195409099}
+  HaouseGameObject: {fileID: 777844160}
 --- !u!114 &2130617298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16757,7 +16866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24798c42f5d2674aaa082d7ab480a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HopeStateMachine
-  initialState: {fileID: 0}
+  initialState: {fileID: 11400000, guid: a4ad8495280731f4eabbd38e4a8c1dd8, type: 2}
   currentState: {fileID: 0}
   Stats: {fileID: 2130617297}
 --- !u!1001 &2138454474
@@ -18007,3 +18116,6 @@ SceneRoots:
   - {fileID: 527824329}
   - {fileID: 998340910}
   - {fileID: 2130617294}
+  - {fileID: 947648000}
+  - {fileID: 1195409100}
+  - {fileID: 777844161}

@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Walk : HopeBaseState
+[CreateAssetMenu(fileName = "closeShoop", menuName = "hope/Routine/states/closeShoop")]
+public class closeShoop : HopeBaseState
 {
     public override void EnterState(HopeStateMachine stateMachine)
     {
