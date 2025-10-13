@@ -7,12 +7,10 @@ public class StateMachine : MonoBehaviour
     public State curretState;
     public float coffeTime = 0;
     public bool coffetime = false;
-    
     public void Start()
     {
         ChangeState(initialState);
     }
-
     private void Update()
     {
         if (curretState != null)
@@ -22,7 +20,6 @@ public class StateMachine : MonoBehaviour
         }
         coffeTime += Time.deltaTime;
     }
-
     public void ChangeState(State newState)
     {
         if(curretState == newState || newState == null)
