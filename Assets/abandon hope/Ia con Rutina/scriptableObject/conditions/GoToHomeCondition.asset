@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc56a210d6ca6114cad786a983688632, type: 3}
   m_Name: GoToHomeCondition
   m_EditorClassIdentifier: Assembly-CSharp::TimeCondition
-  daytime: 17
+  daytime: 22
+  nighttime: 23

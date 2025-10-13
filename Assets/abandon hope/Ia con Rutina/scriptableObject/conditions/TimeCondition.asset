@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TimeCondition
   m_EditorClassIdentifier: Assembly-CSharp::TimeCondition
   daytime: 8
+  nighttime: 9

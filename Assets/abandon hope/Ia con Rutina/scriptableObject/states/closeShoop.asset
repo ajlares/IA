@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eccef57952277248ad6ea196e99e254, type: 3}
   m_Name: closeShoop
   m_EditorClassIdentifier: Assembly-CSharp::closeShoop
-  transitions: []
+  transitions:
+  - condition: {fileID: 11400000, guid: 8da5a0fff46fdcc4e8a3a4e4616fddab, type: 2}
+    state: {fileID: 11400000, guid: a4ad8495280731f4eabbd38e4a8c1dd8, type: 2}
