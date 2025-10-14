@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "GoToCollector", menuName = "hope/Roomba/states/GoToCollector")]
 public class GoToCollector : HopeBaseState
 {
     // profe si lee esto ayuda son las 2 am y no he avanzado nada:C

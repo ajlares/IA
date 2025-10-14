@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "GoToGarbage", menuName = "hope/Roomba/states/GoToGarbage")]
 public class GoToGarbage : HopeBaseState
 {
     public float GarbageDistanceMax = 2;

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "DescansarState", menuName = "hope/Roomba/states/DescansarState")]
 public class DescansarState : HopeBaseState
 {
     public override void EnterState(HopeStateMachine stateMachine)
