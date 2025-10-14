@@ -5,6 +5,6 @@ public class GoTogarbageCube : HopeCondition
 {
     public override bool CheckCondition(HopeStateMachine stateMachine)
     {
-        return false;
+        return stateMachine.Stats.hasGarbage;
     }
 }

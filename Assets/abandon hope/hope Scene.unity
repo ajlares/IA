@@ -2141,7 +2141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24798c42f5d2674aaa082d7ab480a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HopeStateMachine
-  initialState: {fileID: 0}
+  initialState: {fileID: 11400000, guid: b13ccd88c5b0ea84e8959c472fe2cdfa, type: 2}
   currentState: {fileID: 0}
   Stats: {fileID: 311432887}
 --- !u!114 &311432887
@@ -2161,6 +2161,8 @@ MonoBehaviour:
   ShopGameObject: {fileID: 0}
   HaouseGameObject: {fileID: 0}
   workWaipoint: []
+  hasGarbage: 0
+  garbageContainer: {fileID: 765210659}
 --- !u!195 &311432888
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -17562,6 +17564,8 @@ MonoBehaviour:
   - {fileID: 715061246}
   - {fileID: 597896059}
   - {fileID: 980955639}
+  hasGarbage: 0
+  garbageContainer: {fileID: 0}
 --- !u!114 &2130617298
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a010f9a7e1024b41957de6e775be4ec, type: 3}
+  m_Name: DescansarState
+  m_EditorClassIdentifier: Assembly-CSharp::DescansarState
+  transitions:
+  - condition: {fileID: 11400000, guid: 1e895ce9df3655340bd4b96050fa19b2, type: 2}
+    state: {fileID: 11400000, guid: 01f663efcb834f14d9893d9ac839eb06, type: 2}
