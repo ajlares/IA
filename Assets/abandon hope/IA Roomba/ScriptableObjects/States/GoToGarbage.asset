@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3044a68b28abe46977a38ac69a3718, type: 3}
+  m_Name: GoToGarbage
+  m_EditorClassIdentifier: Assembly-CSharp::GoToGarbage
+  transitions:
+  - condition: {fileID: 11400000, guid: af73f07f44da7a3408d503f7bce3e99e, type: 2}
+    state: {fileID: 11400000, guid: b13ccd88c5b0ea84e8959c472fe2cdfa, type: 2}
+  - condition: {fileID: 11400000, guid: 1e895ce9df3655340bd4b96050fa19b2, type: 2}
+    state: {fileID: 11400000, guid: 01f663efcb834f14d9893d9ac839eb06, type: 2}
+  GarbageDistanceMax: 2
