@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 public class HopeManagers : MonoBehaviour
 {
@@ -5,6 +6,13 @@ public class HopeManagers : MonoBehaviour
     public float currentTime = 0;
     private float dayTime = 24;
     public float indexTime = 0;
+    
+    [Header("garbage")]
+    public int garbageAmount = 0;
+    public List<GameObject> GarbagesList;
+    public GameObject garbageprefab;
+    public float garbageTime = 0;
+    [Header("Instance")]
     public static HopeManagers Instance;
     private void Awake()
     {
@@ -28,5 +36,12 @@ public class HopeManagers : MonoBehaviour
              currentTime = 1;   
             }
         }
+    }
+    public void AddGarbage(Vector3 position)
+    {
+        GameObject aux;
+        aux = Instantiate(garbageprefab, position, Quaternion.identity);
+        garbageAmount++;
+        GarbagesList.Add(aux);
     }
 }
