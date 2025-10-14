@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class DescansarState : MonoBehaviour
+public class DescansarState : HopeBaseState
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void EnterState(HopeStateMachine stateMachine)
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState(HopeStateMachine stateMachine)
+    {
+        stateMachine.gameObject.transform.Rotate(new Vector3(0,1,0));
+    }
+    public override void ExitState(HopeStateMachine stateMachine)
     {
         
     }

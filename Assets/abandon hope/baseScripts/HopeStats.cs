@@ -13,6 +13,8 @@ public class HopeStats : MonoBehaviour
 
     [Header("garbage")]
     private float garbageIndexTime;
+    public bool hasGarbage;
+    public GameObject garbageContainer;
 
     private void Update()
     {

@@ -44,4 +44,11 @@ public class HopeManagers : MonoBehaviour
         garbageAmount++;
         GarbagesList.Add(aux);
     }
+
+    public void RemoveGarbage(GameObject garbageGameObject)
+    {
+        GarbagesList.Remove(garbageGameObject);
+        garbageAmount--;
+        Destroy(garbageGameObject);
+    }
 }
