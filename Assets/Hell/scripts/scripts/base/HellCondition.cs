@@ -9,7 +9,7 @@ public class HellCondition : ScriptableObject
     [System.Serializable]
     public class HellTransition
     {
-        public HopeCondition condition;
-        public HopeBaseState state;
+        public HellCondition condition;
+        public HellBaseState state;
     }
 }

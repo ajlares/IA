@@ -22,11 +22,11 @@ public class HellBaseState : ScriptableObject
         {
             foreach ( HellCondition.HellTransition hell in transitions)
             {
-                //if (hell.condition != null && hell.condition.CheckCondition(stateMachine))
-                //{
-                //    stateMachine.ChangeState(hell.state);
-                //    break;
-                //}
+                if (hell.condition != null && hell.condition.CheckCondition(stateMachine))
+                {
+                    stateMachine.ChangeState(hell.state);
+                    break;
+                }
             }
         }
     }
