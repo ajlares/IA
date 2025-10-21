@@ -14,7 +14,7 @@ public class HellStateMachine : MonoBehaviour
 
     private void Update()
     {
-        
+        currentState.UpdateState(this);
     }
 
     public void ChangeState(HellBaseState newState)
