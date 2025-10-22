@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6becffdf79f2f41b1f8d4a626a7375, type: 3}
   m_Name: LumberDiscard
   m_EditorClassIdentifier: Assembly-CSharp::LumberDiscard
-  transitions: []
+  transitions:
+  - condition: {fileID: 11400000, guid: 6e94939818942fc4490aa52a4b8f301d, type: 2}
+    state: {fileID: 11400000, guid: c396c7ac07ac04344b39e1b0066cd911, type: 2}

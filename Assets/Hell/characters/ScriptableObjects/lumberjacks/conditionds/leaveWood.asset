@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f59f526ff5eb64fae4257c33bfbd8e, type: 3}
   m_Name: leaveWood
   m_EditorClassIdentifier: Assembly-CSharp::leaveWood
-  maxDistance: 0
+  maxDistance: 2

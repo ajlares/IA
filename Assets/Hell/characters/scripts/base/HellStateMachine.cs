@@ -15,6 +15,7 @@ public class HellStateMachine : MonoBehaviour
     {
         ChangeState(initialState);
         blackboard.Set("hasWood", false);
+        blackboard.Set("woodAcount", 0f);
     }
 
     private void Update()

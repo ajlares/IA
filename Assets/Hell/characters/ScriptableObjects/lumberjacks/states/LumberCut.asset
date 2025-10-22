@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LumberCut
   transitions:
   - condition: {fileID: 11400000, guid: dc6db5964a082bb4cacc21a699992f97, type: 2}
-    state: {fileID: 0}
+    state: {fileID: 11400000, guid: a85bb3aff6f3aa84486046d099fe0e9e, type: 2}
