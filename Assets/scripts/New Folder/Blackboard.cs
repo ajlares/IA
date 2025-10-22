@@ -1,17 +1,24 @@
 using System.Collections.Generic;
-public class Blackboard : UnityEditor.Experimental.GraphView.Blackboard
+
+public class Blackboard
 {
-    private Dictionary<string, object> data = new Dictionary<string, object>();
+    private Dictionary<string, object> data = new();
+
     public void Set<T>(string key, T value)
     {
-        data.Add(key, value);
+        //data.TryAdd(key,value);
+        data[key] = value;
     }
+
     public T Get<T>(string key)
     {
-        if (data.TryGetValue(key, out object value))
+        if (data.TryGetValue(key, out var value))
         {
             return (T)value;
         }
-        return default(T);
+        else
+        {
+            return default;
+        }
     }
 }
