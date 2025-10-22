@@ -11,6 +11,7 @@ public class HellStateMachine : MonoBehaviour
     public NavMeshAgent agent;
     public GameObject CabinGameObject;
     public GameObject WoodDepotGameObject;
+    public GameObject housePrefab;
     private void Start()
     {
         ChangeState(initialState);

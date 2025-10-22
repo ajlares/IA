@@ -14,6 +14,6 @@ public class goForWood : HellBaseState
 
     public override void ExitState(HellStateMachine stateMachine)
     {
-        
+        mapManager.Instance.woodAcount -= 3;
     }
 }

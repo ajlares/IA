@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f20a48c1da8ce149af88aba8bac4664, type: 3}
+  m_Name: constructorIdle
+  m_EditorClassIdentifier: Assembly-CSharp::constructorIdle
+  transitions:
+  - condition: {fileID: 11400000, guid: d9921d978e495bc43a6d428df43afde5, type: 2}
+    state: {fileID: 11400000, guid: 683287213cac89b43a02c4156c2f643e, type: 2}
+  - condition: {fileID: 11400000, guid: ed1bc9ac63dd1ef40b351023e839a1bf, type: 2}
+    state: {fileID: 11400000, guid: 6312d2e716071b4479e26289f31048c6, type: 2}

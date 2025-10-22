@@ -18,6 +18,6 @@ public class LumberCut : HellBaseState
 
     public override void ExitState(HellStateMachine stateMachine)
     {
-        
+        mapManager.Instance.woodAcount = Random.Range(0, 5);
     }
 }
