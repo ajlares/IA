@@ -16,7 +16,7 @@ public class E2_BaseState : ScriptableObject
 
     public virtual void Update(E2_StateMachine stateMachine)
     {
-        
+        if (!stateMachine){}
     }
 
     public void CheckTransitions(E2_StateMachine stateMachine)

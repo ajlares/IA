@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class E2_StateMachine : MonoBehaviour
 {
     public E2_BaseState initialState;
     public E2_BaseState currentState;
+    public GameObject house;
+    public List<GameObject> dirty;
 
     private void Start()
     {
