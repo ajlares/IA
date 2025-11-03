@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class E2_BaseCondition : MonoBehaviour
+public class E2_BaseCondition : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public virtual bool Check(E2_StateMachine stateMachine)
     {
-        
+        return false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+}
+[System.Serializable]
+public class E2_Transition
+{
+    public E2_BaseCondition Condicion;
+    public E2_BaseState State;
 }

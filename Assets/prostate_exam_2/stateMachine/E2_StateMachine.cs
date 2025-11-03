@@ -2,15 +2,33 @@ using UnityEngine;
 
 public class E2_StateMachine : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public E2_BaseState initialState;
+    public E2_BaseState currentState;
+
+    private void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (currentState != null)
+        {
+            currentState.Update(this);
+            currentState.CheckTransitions(this);
+        }
+    }
+    
+    public void ChangeState(E2_BaseState newState)
+    {
+        if(currentState == newState || newState == null)
+        {
+            return;
+        }
+        if (currentState != null)
+        {
+            currentState.ExitState(this);
+        }
+        currentState = newState;
+        currentState.EnterState(this);
     }
 }
