@@ -1,16 +1,23 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class E2_StateMachine : MonoBehaviour
 {
     public E2_BaseState initialState;
     public E2_BaseState currentState;
-    public GameObject house;
+    [SerializeField] private GameObject house;
+    [SerializeField] private NavMeshAgent agent; 
     public List<GameObject> dirty;
+    public Blackboard Blackboard = new Blackboard();
+    public float chargingamount;
 
     private void Start()
     {
-        
+        ChangeState(initialState);
+        Blackboard.Set("house",house);
+        Blackboard.Set("cleaningTime", 10f);
+        Blackboard.Set("agent", agent);
     }
     private void Update()
     {
