@@ -5,8 +5,9 @@ public class E2_StateMachine : MonoBehaviour
 {
     public E2_BaseState initialState;
     public E2_BaseState currentState;
-    public GameObject house;
+    private GameObject house;
     public List<GameObject> dirty;
+    public Blackboard Blackboard;
 
     private void Start()
     {
@@ -19,6 +20,8 @@ public class E2_StateMachine : MonoBehaviour
             currentState.Update(this);
             currentState.CheckTransitions(this);
         }
+        Blackboard.Set("house",house);
+        Blackboard.Set("cleaningTime", 10f);
     }
     
     public void ChangeState(E2_BaseState newState)
