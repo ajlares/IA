@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3de0970bb01f2468cf5ceb80b30c66, type: 3}
   m_Name: GoToDirttyState
   m_EditorClassIdentifier: Assembly-CSharp::GoToDirttyState
-  transitions: []
+  transitions:
+  - Condicion: {fileID: 11400000, guid: 40373c336f1eb2847b9ea1e1fb577903, type: 2}
+    State: {fileID: 11400000, guid: d205b2e56d4b24341ac71845f63d141e, type: 2}

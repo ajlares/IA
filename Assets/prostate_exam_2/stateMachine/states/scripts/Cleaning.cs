@@ -11,7 +11,7 @@ public class Cleaning : E2_BaseState
     public override void Update(E2_StateMachine stateMachine)
     {
         stateMachine.gameObject.transform.Rotate(new Vector3(0, 1, 0));
-        float indexTime = stateMachine.Blackboard.Get<float>("cleaningIndexTime");
+        float indexTime = stateMachine.Blackboard.Get<float>("cleaningIndexTime") + Time.deltaTime;
         stateMachine.Blackboard.Set("cleaningIndexTime", indexTime);
     }
 

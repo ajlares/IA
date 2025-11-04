@@ -9,10 +9,12 @@ public class E2_StateMachine : MonoBehaviour
     [SerializeField] private GameObject house;
     [SerializeField] private NavMeshAgent agent; 
     public List<GameObject> dirty;
-    public Blackboard Blackboard;
+    public Blackboard Blackboard = new Blackboard();
+    public float chargingamount;
 
     private void Start()
     {
+        ChangeState(initialState);
         Blackboard.Set("house",house);
         Blackboard.Set("cleaningTime", 10f);
         Blackboard.Set("agent", agent);

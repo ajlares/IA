@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0a7561dc9e8fc4cbc90097e6df1df7, type: 3}
   m_Name: PuddleState
   m_EditorClassIdentifier: Assembly-CSharp::PuddleState
-  transitions: []
+  transitions:
+  - Condicion: {fileID: 11400000, guid: 4b04ff54c817cb844ba3bdc1356fa14f, type: 2}
+    State: {fileID: 11400000, guid: dce4a33c4b6477343b105c86f377de67, type: 2}
