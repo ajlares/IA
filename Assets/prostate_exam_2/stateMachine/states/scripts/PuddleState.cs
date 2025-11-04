@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "PuddleState", menuName = "Exam2/Slime/states/PuddleState")]
 public class PuddleState : E2_BaseState
 {
     public override void EnterState(E2_StateMachine stateMachine)
