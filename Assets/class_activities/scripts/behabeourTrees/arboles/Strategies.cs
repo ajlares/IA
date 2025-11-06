@@ -51,7 +51,7 @@ namespace BehaviourTree
             }
             return Node.Status.Running;
         }
-
+        
         public void Reset()
         {
             currentIndex = 0;

@@ -1,6 +1,34 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class E2_Slime : MonoBehaviour
+namespace E2_BehaviourTree
 {
+    public class E2_Slime : MonoBehaviour
+    {
+        public E2_BehaviourTree slimeTree;
+        [Header("---------- waypoints ----------")]
+        public NavMeshAgent agent;
+        public List<Transform> waypoints;
+        public float speed;
+        [Header("---------- House ----------")]
+        public Transform House;
+        [Header("---------- IndexTimes----------")]
+        public float chargeTime;
 
+        private void Start()
+        {
+            // creamos el arbol
+            slimeTree = new E2_BehaviourTree("Slime Tree");
+            // creamos la primera estrategia 
+            //IE2_Strategies IdleStrategy = new IdleStrategy(this.gameObject,agent,chargeTime);
+            //slimeTree.AddChild(new E2_Leaf("idle",IdleStrategy));
+        }
+        private void Update()
+        {
+            slimeTree.Process();
+        }
+    }
 }
+

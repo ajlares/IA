@@ -7,8 +7,10 @@ namespace E2_BehaviourTree
     public class E2_Sequence : E2_Node
     {
         // cosntructor
-        public E2_Sequence(string nodeName) : base(nodeName){ }
-        
+        public E2_Sequence(string nodeName) : base(nodeName)
+        {
+        }
+
         // override clase process de nodo
         public override Status Process()
         {
@@ -17,7 +19,7 @@ namespace E2_BehaviourTree
                 switch (children[currentChild].Process())
                 {
                     case Status.Running:
-                        return Status.Running; 
+                        return Status.Running;
                         break;
                     case Status.Failure:
                         Reset();
@@ -29,17 +31,20 @@ namespace E2_BehaviourTree
                         break;
                 }
             }
+
             Reset();
             return Status.Success;
         }
-        
+
     }
 
     public class E2_Selector : E2_Node
     {
         // cosntructor
-        public E2_Selector(string nodeName) : base(nodeName) { } 
-        
+        public E2_Selector(string nodeName) : base(nodeName)
+        {
+        }
+
         override public Status Process()
         {
             if (currentChild < children.Count)
@@ -49,9 +54,9 @@ namespace E2_BehaviourTree
                     case Status.Running:
                         return Status.Running;
                         break;
-                    case Status.Success: 
+                    case Status.Success:
                         Reset();
-                        return Status.Success; 
+                        return Status.Success;
                         break;
                     default:
                         currentChild++;
@@ -59,6 +64,7 @@ namespace E2_BehaviourTree
                         break;
                 }
             }
+
             Reset();
             return Status.Failure;
         }
@@ -76,13 +82,16 @@ namespace E2_BehaviourTree
 
         // declaramos el nombre y hacemos que no se pueda modificar 
         public readonly string name;
+
         // declaramos un status 
         public Status status;
+
         // declaramos la lista de hijos del nodo 
         public readonly List<E2_Node> children = new List<E2_Node>();
+
         // numero interno que dice que numero de hijo actual
         protected int currentChild = 0;
-        
+
         //constructor del nodo
         public E2_Node(string name)
         {
@@ -94,7 +103,7 @@ namespace E2_BehaviourTree
         {
             children.Add(child);
         }
-        
+
         // creamos la funcion que regresa el status del nodo
         // la cual es una lambda simplificada de: return children[currentChild].Process();
         public virtual Status Process() => children[currentChild].Process();
@@ -109,25 +118,29 @@ namespace E2_BehaviourTree
             }
         }
     }
-    
+
     public class E2_Leaf : E2_Node
     {
         readonly IE2_Strategies strategy;
+
         // cosntructor 
         public E2_Leaf(string name, IE2_Strategies strategy) : base(name)
         {
             this.strategy = strategy;
         }
-        
+
         public override Status Process() => strategy.Process();
         public override void Reset() => strategy.Reset();
-        
+
     }
 
     public class E2_BehaviourTree : E2_Node
     {
         // cosntructor
-        public E2_BehaviourTree(string name) : base(name) { }
+        public E2_BehaviourTree(string name) : base(name)
+        {
+        }
+
         public override Status Process()
         {
             while (currentChild < children.Count)
@@ -137,9 +150,13 @@ namespace E2_BehaviourTree
                 {
                     return status;
                 }
+
                 currentChild++;
             }
+
             return Status.Success;
         }
     }
+    
+    
 }
