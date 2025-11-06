@@ -454,6 +454,8 @@ MonoBehaviour:
   speed: 2
   House: {fileID: 1178909465}
   chargeTime: 10
+  chargeComplete: 0
+  cleanTime: 10
 --- !u!195 &221921005
 NavMeshAgent:
   m_ObjectHideFlags: 0

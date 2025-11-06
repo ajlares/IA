@@ -43,37 +43,84 @@ namespace E2_BehaviourTree
     }
     
     
-    // leaf 1
+    // Startegi 1
     public class IdleStrategy : IE2_Strategies
     {
-        public GameObject ThisGameObject;
-        public NavMeshAgent agent;
-        public float chargeTime;
-        public float indexCurrentTime;
+        public E2_Slime ThisSlime;
+        private float _indexCurrentTime;
 
         // constructor idle
-        public IdleStrategy(GameObject newGameObject, NavMeshAgent newAgent, float newChargeTime)
+        public IdleStrategy(E2_Slime newGameObject)
         {
-            this.ThisGameObject = newGameObject;
-            this.agent = newAgent;
-            this.chargeTime = newChargeTime;
-            indexCurrentTime = 0;
+            this.ThisSlime = newGameObject;
+            _indexCurrentTime = 0;
         }
         public E2_Node.Status Process()
         {
-            if (chargeTime < indexCurrentTime)
+            if (ThisSlime.chargeTime < _indexCurrentTime)
             {
+                _indexCurrentTime = 0;
+                ThisSlime.chargeComplete = true;
                 return E2_Node.Status.Success;
             }
             
-            ThisGameObject.transform.transform.Rotate(new Vector3(0, 1, 0));
-            indexCurrentTime += Time.deltaTime;
+            ThisSlime.gameObject.transform.transform.Rotate(new Vector3(0, 1, 0));
+            _indexCurrentTime += Time.deltaTime;
             return E2_Node.Status.Running;
         }
 
         public void Reset()
         {
-            indexCurrentTime = 0;
+            _indexCurrentTime = 0;
+        }
+    }
+    
+    // strategi 2
+    public class GoTOdirty : IE2_Strategies
+    {
+        public E2_Slime ThisSlime;
+        public GoTOdirty(E2_Slime newSlime)
+        {
+            this.ThisSlime = newSlime;
+        }
+        public E2_Node.Status Process()
+        {
+            return E2_Node.Status.Success;
+        }
+    }
+    // strategi 3
+    public class Cleaning : IE2_Strategies
+    {
+        public E2_Slime ThisSlime;
+        private float _indexCurrentTime;
+        public Cleaning(E2_Slime newSlime)
+        {
+            this.ThisSlime = newSlime;
+        }
+        public E2_Node.Status Process()
+        {
+            if (_indexCurrentTime > ThisSlime.cleanTime)
+            {
+                _indexCurrentTime = 0;
+                ThisSlime.chargeComplete = false;
+                return E2_Node.Status.Success;
+            }
+            ThisSlime.gameObject.transform.transform.Rotate(new Vector3(0, 1, 0));
+            _indexCurrentTime += Time.deltaTime;
+            return E2_Node.Status.Running;
+        }
+    }
+    // strategi 4 
+    public class GoToHouse : IE2_Strategies
+    {
+        public E2_Slime ThisSlime;
+        public GoToHouse(E2_Slime newSlime)
+        {
+            this.ThisSlime = newSlime;
+        }
+        public E2_Node.Status Process()
+        {
+            return E2_Node.Status.Success;
         }
     }
 }

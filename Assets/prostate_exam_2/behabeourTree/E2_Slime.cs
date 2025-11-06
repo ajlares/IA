@@ -16,14 +16,18 @@ namespace E2_BehaviourTree
         public Transform House;
         [Header("---------- IndexTimes----------")]
         public float chargeTime;
+        public bool chargeComplete;
+        public float cleanTime;
 
         private void Start()
         {
             // creamos el arbol
             slimeTree = new E2_BehaviourTree("Slime Tree");
             // creamos la primera estrategia 
-            //IE2_Strategies IdleStrategy = new IdleStrategy(this.gameObject,agent,chargeTime);
-            //slimeTree.AddChild(new E2_Leaf("idle",IdleStrategy));
+            IE2_Strategies IdleStrategy = new IdleStrategy(this);
+            // creamos la segunda estrategia 
+            
+            slimeTree.AddChild(new E2_Leaf("idle",IdleStrategy));
         }
         private void Update()
         {
