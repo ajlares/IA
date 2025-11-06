@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace E2_BehaviourTree
 {
@@ -50,17 +51,15 @@ namespace E2_BehaviourTree
         private float _indexCurrentTime;
 
         // constructor idle
-        public IdleStrategy(E2_Slime newGameObject)
+        public IdleStrategy(E2_Slime newSlime)
         {
-            this.ThisSlime = newGameObject;
+            this.ThisSlime = newSlime;
             _indexCurrentTime = 0;
         }
         public E2_Node.Status Process()
         {
             if (ThisSlime.chargeTime < _indexCurrentTime)
             {
-                _indexCurrentTime = 0;
-                ThisSlime.chargeComplete = true;
                 return E2_Node.Status.Success;
             }
             
@@ -79,13 +78,25 @@ namespace E2_BehaviourTree
     public class GoTOdirty : IE2_Strategies
     {
         public E2_Slime ThisSlime;
+        private int _currentDirty;
         public GoTOdirty(E2_Slime newSlime)
         {
             this.ThisSlime = newSlime;
+            _currentDirty = Random.Range(0, ThisSlime.waypoints.Count);
         }
         public E2_Node.Status Process()
         {
-            return E2_Node.Status.Success;
+            float currentDistance = Vector3.Distance(ThisSlime.gameObject.transform.position, ThisSlime.waypoints[_currentDirty].position);
+            if (currentDistance < ThisSlime.maxDistance)
+            {
+                return E2_Node.Status.Success;
+            }
+            ThisSlime.agent.SetDestination(ThisSlime.waypoints[_currentDirty].transform.position);
+            return E2_Node.Status.Running;
+        }
+        public void Reset()
+        {
+            _currentDirty = Random.Range(0, ThisSlime.waypoints.Count);
         }
     }
     // strategi 3
@@ -101,13 +112,15 @@ namespace E2_BehaviourTree
         {
             if (_indexCurrentTime > ThisSlime.cleanTime)
             {
-                _indexCurrentTime = 0;
-                ThisSlime.chargeComplete = false;
                 return E2_Node.Status.Success;
             }
             ThisSlime.gameObject.transform.transform.Rotate(new Vector3(0, 1, 0));
             _indexCurrentTime += Time.deltaTime;
             return E2_Node.Status.Running;
+        }
+        public void Reset()
+        {
+            _indexCurrentTime = 0;
         }
     }
     // strategi 4 
@@ -120,7 +133,18 @@ namespace E2_BehaviourTree
         }
         public E2_Node.Status Process()
         {
-            return E2_Node.Status.Success;
+            float currentDistance = Vector3.Distance(ThisSlime.gameObject.transform.position, ThisSlime.House.position);
+            if (currentDistance < ThisSlime.maxDistance)
+            {
+                return E2_Node.Status.Success;
+            }
+            ThisSlime.agent.SetDestination(ThisSlime.House.position);
+            return E2_Node.Status.Running;
+        }
+
+        public void Reset()
+        {
+            
         }
     }
 }

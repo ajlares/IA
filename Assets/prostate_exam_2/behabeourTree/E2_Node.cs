@@ -140,22 +140,23 @@ namespace E2_BehaviourTree
         public E2_BehaviourTree(string name) : base(name)
         {
         }
-
         public override Status Process()
         {
-            while (currentChild < children.Count)
+            if (currentChild >= children.Count)
             {
-                var status = children[currentChild].Process();
-                if (status != Status.Success)
-                {
-                    return status;
-                }
+                Reset();
+            }
 
+            var status = children[currentChild].Process();
+
+            if (status == Status.Success)
+            {
                 currentChild++;
             }
 
-            return Status.Success;
+            return status;
         }
+
     }
     
 }
