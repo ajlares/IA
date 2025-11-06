@@ -7,7 +7,7 @@
 - Hell
 - protate_exam_1
 - prostate_exam_2
-## prostate_exam_2
+## [prostate_exam_2]([https://github.com/IonLara](https://github.com/ajlares/IA/tree/main/Assets/prostate_exam_2))
  en este apartado del proyecto se hizo el segundo examen parcial de la materia. en la cual se llevo a cavo la comparacion de dos metodos para hacer inteligencias artificiales.
  ambas IAs simulan un slime que va a limpiar suciedad usando los siguientes parametros:
  - una casa o base para recargarse de energia
