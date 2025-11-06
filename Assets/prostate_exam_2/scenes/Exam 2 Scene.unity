@@ -451,14 +451,11 @@ MonoBehaviour:
   - {fileID: 897415724}
   - {fileID: 1295418290}
   - {fileID: 121577280}
-  speed: 2
+  speed: 10
   maxDistance: 2
   House: {fileID: 1178909465}
   chargeTime: 3
-  chargeComplete: 0
   cleanTime: 3
-  isInDirty: 0
-  isInHouse: 0
 --- !u!195 &221921005
 NavMeshAgent:
   m_ObjectHideFlags: 0
