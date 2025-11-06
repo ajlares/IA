@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
 namespace BehaviourTree
 {
     public interface IStrategies
@@ -52,7 +51,7 @@ namespace BehaviourTree
             }
             return Node.Status.Running;
         }
-
+        
         public void Reset()
         {
             currentIndex = 0;

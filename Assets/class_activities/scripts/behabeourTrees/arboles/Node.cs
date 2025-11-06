@@ -97,7 +97,6 @@ namespace BehaviourTree
     public class Leaf : Node
     {
         readonly IStrategies strategy;
-
         public Leaf(string name, IStrategies strategy) : base(name)
         {
             this.strategy = strategy;
@@ -110,7 +109,6 @@ namespace BehaviourTree
     public class BehaviourTree : Node
     {
         public BehaviourTree(string name) : base(name) { }
-
         public override Status Process()
         {
             while (currentChild < children.Count)

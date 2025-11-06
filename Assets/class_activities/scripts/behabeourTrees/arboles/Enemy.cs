@@ -15,7 +15,6 @@ namespace BehaviourTree
             tree = new BehaviourTree("el arboles");
             IStrategies patrolStrategy = new PatrolStrategy(transform, agent, patrolPoints, patrolSpeed);
             tree.AddChild(new Leaf("arboles",patrolStrategy));
-            
         }
         void Update()
         {
